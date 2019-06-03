@@ -1,10 +1,16 @@
 <template>
-  <div id="app">
-  </div>
+  <v-app>
+    
+  </v-app>
 </template>
 
-<style>
-#app {
-  
+<script>
+export default {
+  name: 'App',
+  data () {
+    return {
+      //
+    }
+  }
 }
-</style>
+</script>
