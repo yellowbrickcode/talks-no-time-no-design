@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <nav>
+      <span>LegoLog </span> 
       <a href="/">Home</a>
     </nav>
     <section id="main-content">
-      <section id="sidebar">
-        Sidebar
-      </section>
       <section id="content">
-        Content
+        <h1>Welcome to the LegoLog!</h1>
+        <p>Catalogue all of your personal Lego sets to keep track of what you have, what you've built and what's yet to be built.</p>
       </section>
     </section>
   </div>
@@ -37,13 +36,10 @@ nav > a {
 
 #main-content {
   grid-row: 2 / 2;
-}
-
-#sidebar {
-  grid-column: col-start / span 3;
+  grid-column: col-start / span 12;
 }
 
 #content {
-  grid-column: col-start 4 / span 9;
+  grid-column: col-start 2 / span 8;
 }
 </style>
