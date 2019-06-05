@@ -2,7 +2,6 @@
   <div id="app">
     <nav>
       <span>LegoLog </span> 
-      <!-- <a to="/">Home</a> -->
       <router-link to="/">Home</router-link>
       <input id="search" type="text" placeholder="Search..." autocomplete="off" />
     </nav>
