@@ -2,22 +2,24 @@
   <div id="app">
     <nav>
       <span>LegoLog </span> 
-      <a href="/">Home</a>
+      <!-- <a to="/">Home</a> -->
+      <router-link to="/">Home</router-link>
+      <input id="search" type="text" placeholder="Search..." autocomplete="off" />
     </nav>
     <section id="main-content">
-      <section id="content">
-        <h1>Welcome to the LegoLog!</h1>
-        <p>Catalogue all of your personal Lego sets to keep track of what you have, what you've built and what's yet to be built.</p>
-      </section>
+      <router-view></router-view>
     </section>
   </div>
 </template>
 
 <style>
+body {
+  margin: 0;
+}
+
 #app {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
-  grid-gap: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -34,12 +36,24 @@ nav > a {
   text-decoration: none;
 }
 
-#main-content {
-  grid-row: 2 / 2;
-  grid-column: col-start / span 12;
+nav > a.router-link-active {
+  background-color: #42A5F5;
 }
 
-#content {
-  grid-column: col-start 2 / span 8;
+#main-content {
+  grid-column: col-start / span 12;
+  grid-row: 2 / 2;
+  display: grid;
+  grid-template-columns: repeat(12, [inner-col-start] 1fr);
+}
+
+input {
+  border-radius: 0.25rem;
+  border: 1px solid #0D47A1;
+  padding: 0.5rem;
+}
+
+#search {
+  float: right;
 }
 </style>
