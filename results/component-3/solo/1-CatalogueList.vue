@@ -7,7 +7,13 @@
         <ul>
             <li v-for="item in catalogue" :key="item.id" @click="itemClicked">
                 <section id="id">{{item.id}}</section>
+                <section id="theme">{{item.theme}}</section>
                 <section id="set">{{item.set}}</section>
+                <section id="pieces">{{item.pieces}}</section>
+                <section id="built">
+                    <span v-if="item.built">Yes</span>
+                    <span v-if="!item.built">No</span>
+                </section>
             </li> 
         </ul>
       </section>
@@ -36,12 +42,27 @@ li:hover {
 }
 
 #id {
-    grid-column: item-col-start / span 3;
+    grid-column: item-col-start / span 1;
+    grid-row: 1/1;
+}
+
+#theme {
+    grid-column: item-col-start 2 / span 3;
     grid-row: 1/1;
 }
 
 #set {
-    grid-column: item-col-start 3 / span 9;
+    grid-column: item-col-start 5 / span 5;
+    grid-row: 1/1;
+}
+
+#pieces {
+    grid-column: item-col-start 10 / span 2;
+    grid-row: 1/1;
+}
+
+#built {
+    grid-column: item-col-start 12 / span 1;
     grid-row: 1/1;
 }
 </style>

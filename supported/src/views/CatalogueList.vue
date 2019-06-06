@@ -27,7 +27,13 @@
                                 <template v-slot:items="props">
                                     <tr @click="itemClicked(props.item)">
                                         <td>{{props.item.id}}</td>
+                                        <td>{{props.item.theme}}</td>
                                         <td>{{props.item.set}}</td>
+                                        <td>{{props.item.pieces}}</td>
+                                        <td>
+                                            <v-icon v-if="props.item.built">done</v-icon>
+                                            <v-icon v-if="!props.item.built">close</v-icon>
+                                        </td>
                                     </tr>
                                 </template>
                             </v-data-table>
@@ -38,12 +44,6 @@
         </v-layout>
     </section>
 </template>
-<style scoped>
-tr {
-    cursor: pointer;
-}
-</style>
-
 <script>
 import catalogue from '@/shared/catalogue';
 
@@ -54,7 +54,10 @@ export default {
             catalogue: catalogue.items,
             headers: [
                 { text: 'ID', align: 'left', sortable: true, value: 'id' },
-                { text: 'Set', align: 'left', sortable: true, value: 'set' }
+                { text: 'Theme', align: 'left', sortable: true, value: 'theme'},
+                { text: 'Set', align: 'left', sortable: true, value: 'set' },
+                { text: 'Pieces', align: 'left', sortable: true, value: 'pieces' },
+                { text: 'Built', align: 'left', sortable: true, value: 'built' }
             ],
             search: ''
         }
