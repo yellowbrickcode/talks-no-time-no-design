@@ -2,8 +2,8 @@
   <div id="app">
     <nav>
       <span>LegoLog </span> 
-      <!-- <a to="/">Home</a> -->
       <router-link to="/">Home</router-link>
+      <router-link to="/catalogue">Catalogue</router-link>
       <input id="search" type="text" placeholder="Search..." autocomplete="off" />
     </nav>
     <section id="main-content">
@@ -34,6 +34,7 @@ nav > a {
   color: #ffffff;
   font-weight: 700;
   text-decoration: none;
+  margin-left: 1rem; 
 }
 
 nav > a.router-link-active {
